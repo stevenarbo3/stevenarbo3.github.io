@@ -1,120 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Steven Arbo</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Steven Arbo</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/headshot.png" alt="Profile Picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Steven Arbo</h1>
-        <p class="section__text__p2">CS Student</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/in/steven-arbo-8811aa29b/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/stevenarbo3'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>Trust Me <br />Bro</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven's Portfolio</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body onload="typeWriter()">
+    <header>
+        <h1>Steven Arbo</h1>
+        <nav class="nav-links">
+            <a href="#profile">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+        </nav>
+    </header>
+    <main>
+        <section id="profile">
+            <div>
+                <!-- <p class="intro">Find out what everyone has been dying to know...</p> -->
             </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>Junior CS Major + Math Minor<br />University of Massachusetts Amherst</p>
+            <div class="searchbar">
+                <a href="#about">
+                    <img
+                    height="30px"
+                    src="./assets/search-icon.png"
+                    alt="Search Icon"/>
+                </a>
+                <p id="search-text"></p>
+                <script>
+                    var i = 0;
+                    var txt = 'Who is Steven Arbo?';
+                    var speed = 90;
+                    
+                    function typeWriter() {
+                      if (i < txt.length) {
+                        document.getElementById("search-text").innerHTML += txt.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+                      }
+                    }
+                </script>
             </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Yo yo yo, it's ya boy. Hire me real quick it'll
-              be the best decision you ever make
-            </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
+        </section>
+        <section id="about">
+            <div>
+                <h2>About Me</h2>
+            </div>
+            <div class="about-container">
+                <div>
+                    <img
+                    class="profile-pic"
+                    src="./assets/headshot.png"
+                    alt="Profile Picture"/>
+                </div>
+                <div class="about-info">
+                    <h4 style="font-size: 50px;">Hello, I'm Steven Arbo</h3>
+                    <h4 style="font-size: 30px; color: #dddddd">CS Student</h4>
+                    <br/>
+                    <p style="font-size: 20px;">I am currently entering my senior year at the University of Massachusetts Amherst.
+                        I am studying computer science, minoring in mathematics, and focusing on data science. In my free time, I
+                        love designing new projects, working out, and sports. 
+                    </p>
+                    <br/><br/>
+                    
+                    <div class="logos">
+                        <a href="https://github.com/stevenarbo3">
+                            <img
+                            height="50px"
+                            src="./assets/github.png"
+                            alt="GitHub Logo"/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/steven-arbo-8811aa29b/">
+                            <img
+                            height="50px"
+                            src="./assets/linkedin.png"
+                            alt="LinkedIn Logo"/>
+                        </a>
+                        <a href="./assets/resume.pdf" download>
+                            <img
+                            height="50px"
+                            src="./assets/resume-icon.png"
+                            alt="Resume Logo"/>
+                        </a>
+                        <a href="mailto:steven.arbo@icloud.com">
+                            <img
+                            height="50px"
+                            src="./assets/email-icon.png"
+                            alt="Email Logo"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <div>
+                <h2>Projects</h2>
+            </div>
+            <div class="projects-container">
+                <div class="project-container">
+                    <div class="project-description">
+                        <h3>Clubbernaut App</h3>
+                        <br/>
+                        <p>Clubbernaut is a web application for UMass students to find clubs.
+                            It allows students to follow clubs and receive updates from said clubs as well
+                            as create clubs and send updates. There are many more feautes as well! It was built using Next Js, Node Js, and
+                            Supabase.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://github.com/SimpleSwagSyndicate/ClubberNaut">
+                            <img
+                            class="project-image"
+                            height="150px"
+                            src="./assets/cubbernaut-logo.png"
+                            alt="Clubbernaut Logo"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-container">
+                    <div>
+                        <a href="https://umass-course-reviews.vercel.app">
+                        <img
+                        class="project-image"
+                        height="130px"
+                        src="https://upload.wikimedia.org/wikipedia/commons/2/23/UMass_Amherst_athletics_logo.svg"
+                        alt="UMass Logo"/>
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        <h3>UMass Course Reviews</h3>
+                        <br/>
+                        <p>UMass Course Reviews was created in a hackathon with a partner to enhance the course selection process for 
+                            students at the University of Massachusetts. Offering an innovative alternative 
+                            to RateMyProfessor, this platform focuses on providing comprehensive details 
+                            about courses, independent of the instructors.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-container">
+                    <div class="project-description">
+                        <h3>MLB Attendance Web Scraper</h3>
+                        <br/>
+                        <p>This project uses Python and Pandas to scrape attendance data from baseball-reference.com. It
+                            allows the user to select which season(s) they want to receive data
+                            for and copys that data to a csv file for them.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://github.com/stevenarbo3/MLB_Attendance">
+                            <img
+                            class="project-image"
+                            height="120px"
+                            src="./assets/mlb-logo.png"
+                            alt="MLB Logo"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
