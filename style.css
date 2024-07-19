@@ -451,6 +451,14 @@ body {
   color: #0d1d31
 }
 
+footer {
+  height: 26vh;
+  margin: 0 1rem;
+}
+
+footer p {
+  text-align: center;
+}
 
 .stars {
   position: fixed;
